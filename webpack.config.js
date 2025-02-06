@@ -8,7 +8,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/',
-    clean: true
+    clean: true,
+    assetModuleFilename: 'assets/[name][ext]'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -33,10 +34,11 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        test: /\.(jpg|jpeg|png|gif|svg|webp)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/Images/[name][ext]'
+          filename: 'assets/Images/[name][ext]',
+          publicPath: '/'
         }
       }
     ],
@@ -51,14 +53,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      filename: 'index.html'
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { 
-          from: 'public/assets',
-          to: 'assets',
-          noErrorOnMissing: true
+        {
+          from: path.resolve(__dirname, 'public/assets'),
+          to: path.resolve(__dirname, 'dist/assets'),
+          noErrorOnMissing: true,
+          globOptions: {
+            ignore: ['**/.DS_Store', '**/Thumbs.db']
+          }
         }
       ]
     })
