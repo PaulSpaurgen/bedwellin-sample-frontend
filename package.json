@@ -29,8 +29,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production",
-    "serve": "serve -s dist"
+    "start": "serve dist"
   }
 }
