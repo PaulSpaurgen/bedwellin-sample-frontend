@@ -58,10 +58,7 @@ module.exports = {
         { 
           from: 'public/assets',
           to: 'assets',
-          noErrorOnMissing: true,
-          globOptions: {
-            ignore: ['**/.DS_Store']
-          }
+          noErrorOnMissing: true
         }
       ]
     })
