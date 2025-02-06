@@ -3,13 +3,13 @@
 * Start the development server: `npm start`
 
 - Tech Stack
-React 18
-TypeScript
-Webpack 5
-TailwindCSS
-
-DaisyUI
-React Router DOM
+  - React 18
+   - TypeScript
+   - Webpack 5
+   - TailwindCSS
+  - DaisyUI
+   - React
+   - Router DOM
 
 - Project Structure
 src/
