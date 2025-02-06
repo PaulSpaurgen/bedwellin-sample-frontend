@@ -1,5 +1,4 @@
-- Deployed - https://vercel.com/paulspaurgens-projects/bedwellin-sample-frontend
-
+- Deployed - https://bedwellin-sample-frontend.vercel.app/
 - Getting Started
 * Install dependencies: `npm install`
 * Start the development server: `npm start`
