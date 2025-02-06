@@ -56,9 +56,12 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { 
-          from: path.resolve(__dirname, 'public/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
-          noErrorOnMissing: true
+          from: 'public/assets',
+          to: 'assets',
+          noErrorOnMissing: true,
+          globOptions: {
+            ignore: ['**/.DS_Store']
+          }
         }
       ]
     })
